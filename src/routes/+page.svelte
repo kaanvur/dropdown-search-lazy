@@ -105,7 +105,10 @@
 						{#each selectedCharacters as selectedCharacter}
 							<Button
 								class={`${badgeVariants()} h-auto`}
-								on:click={() => removeCharacter(selectedCharacter.value)}
+								on:click={(event) => {
+									event.stopPropagation();
+									removeCharacter(selectedCharacter.value);
+								  }}
 								>{selectedCharacter.label} <X class="h-4 w-4" />
 							</Button>
 						{/each}
