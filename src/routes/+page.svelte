@@ -69,7 +69,7 @@
 				...characters,
 				...data.results.map((character: Character) => ({
 					...character,
-					value: character.name,
+					value: character.id.toString(),
 					label: character.name,
 					loaded: false
 				}))
